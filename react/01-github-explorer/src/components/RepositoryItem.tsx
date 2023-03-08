@@ -1,4 +1,12 @@
-function RepositoryItem({ repository }) {
+interface RepositoryItemProps {
+    repository: {
+        name: string;
+        description: string;
+        html_url: string;
+    };
+}
+
+function RepositoryItem({repository}: RepositoryItemProps) {
     return (
         <>
             <h1>{repository.name}</h1>

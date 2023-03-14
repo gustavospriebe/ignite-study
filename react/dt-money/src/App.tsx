@@ -1,13 +1,13 @@
 import { GlobalStyle } from "./styles/global";
 import { Header } from "./Header";
-
+import { Dashboard } from "./Dashboard";
 
 export function App() {
     return (
-        <div className="App">
+        <>
             <GlobalStyle />
             <Header />
-            <h1>Hello World</h1>
-        </div>
+            <Dashboard />
+        </>
     );
 }

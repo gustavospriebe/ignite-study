@@ -2,35 +2,21 @@ import { Container } from "./styles";
 import entradas from "../assets/entradas.svg";
 import money from "../assets/money.svg";
 import saidas from "../assets/saidas.svg";
-import { useContext, useEffect, useState } from "react";
-import { TransactionsContext } from "../TransactionsContext";
-
-interface SummaryProps {
-    income: number;
-    // outcome: number | bigint;
-}
+import { useTransaction } from "../TransactionsContext";
 
 export function Summary() {
-    const transactions = useContext(TransactionsContext);
-    const [income, setIncome] = useState<SummaryProps[]>([]);
-    const [outcome, setOutcome] = useState<SummaryProps[]>([]);
+    const { transactions } = useTransaction();
 
-    const incomeValue = transactions.map((transaction) =>
-        transaction.type === "deposit" ? transaction.amount : 0
+    const income = transactions.reduce(
+        (acc, transaction) =>
+            transaction.type === "deposit" ? acc + transaction.amount : acc,
+        0
     );
-
-    const outcomeValue = transactions.map((transaction) =>
-        transaction.type === "withdraw" ? transaction.amount : 0
+    const outcome = transactions.reduce(
+        (acc, transaction) =>
+            transaction.type === "withdraw" ? acc + transaction.amount : acc,
+        0
     );
-
-    useEffect(() => {
-        setIncome(
-            incomeValue.reduce((acc, transaction) => acc + transaction, 0)
-        );
-        setOutcome(
-            outcomeValue.reduce((acc, transaction) => acc + transaction, 0)
-        );
-    }, [transactions]);
 
     return (
         <Container>

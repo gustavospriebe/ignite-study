@@ -6,6 +6,7 @@ export const Container = styled.div`
     display: flex;
     justify-content: space-around;
     margin-top: -10rem;
+    gap: 0 1rem;
 
     div {
         background-color: var(--shape);
@@ -13,8 +14,6 @@ export const Container = styled.div`
         border-radius: 0.25rem;
         color: var(--text-title);
         width: 100%;
-
-        margin: 0 1rem;
 
         header {
             display: flex;
@@ -32,7 +31,7 @@ export const Container = styled.div`
 
         &.highlighted {
             background-color: var(--green);
-            color: #FFF;
+            color: #fff;
         }
     }
 `;

@@ -21,6 +21,14 @@ createServer({
                 },
                 {
                     id: 2,
+                    title: "Teste",
+                    type: "deposit",
+                    category: "Casa",
+                    amount: 1000,
+                    createdAt: new Date("2023-03-10 10:00"),
+                },
+                {
+                    id: 3,
                     title: "Aluguel",
                     type: "withdraw",
                     category: "Despesa",

@@ -24,15 +24,6 @@ export function NewTransactionModal({
 
     function handleNewTransaction(e: FormEvent) {
         e.preventDefault();
-
-        const data = {
-            title,
-            amount,
-            category,
-            type,
-        };
-
-        api.post("/transactions", data);
     }
 
     return (

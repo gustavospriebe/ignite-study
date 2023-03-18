@@ -10,6 +10,8 @@ interface Transaction {
     createdAt: string;
 }
 
+type TransactionInput = Omit<Transaction, "id" | "createdAt">;
+
 interface TransactionsProviderProps {
     children: ReactNode;
 }
@@ -26,6 +28,10 @@ export function TransactionsProvider({ children }: TransactionsProviderProps) {
         }
         transactions();
     }, []);
+
+    function createTransaction(transaction: TransactionInput) {
+        api.post("/transactions", transaction);
+    }
 
     return (
         <TransactionsContext.Provider value={transactions}>

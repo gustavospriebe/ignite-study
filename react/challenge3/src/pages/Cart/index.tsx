@@ -16,7 +16,7 @@ interface Product {
     image: string;
     amount: number;
     priceFormatted?: string;
-    totalPriceProduct?: string;
+    subTotal?: string;
     operator: string;
 }
 
@@ -28,29 +28,30 @@ const Cart = (): JSX.Element => {
     const cartFormatted = cart.map((product) => ({
         ...product,
         priceFormatted: formatPrice(product.price),
-        totalPriceProduct: formatPrice(product.price * product.amount),
+        subtotal: formatPrice(product.price * product.amount),
         operator: "",
     }));
 
     const total = formatPrice(
         cart.reduce((sumTotal, product) => {
-            let newSumTotal = sumTotal;
-            newSumTotal = newSumTotal + product.price * product.amount;
-
-            return newSumTotal;
+            return sumTotal + product.price * product.amount;
         }, 0)
     );
 
     console.log(cartFormatted);
 
     function handleProductIncrement(product: Product) {
-        product.operator = "increment";
-        updateProductAmount(product);
+        updateProductAmount({
+            productId: product.id,
+            amount: product.amount + 1,
+        });
     }
 
     function handleProductDecrement(product: Product) {
-        product.operator = "decrement";
-        updateProductAmount(product);
+        updateProductAmount({
+            productId: product.id,
+            amount: product.amount - 1,
+        });
     }
 
     function handleRemoveProduct(productId: number) {
@@ -109,7 +110,7 @@ const Cart = (): JSX.Element => {
                                 </div>
                             </td>
                             <td>
-                                <strong>{product.totalPriceProduct}</strong>
+                                <strong>{product.subtotal}</strong>
                             </td>
                             <td>
                                 <button

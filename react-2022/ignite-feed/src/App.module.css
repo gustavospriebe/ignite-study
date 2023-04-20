@@ -1,7 +1,6 @@
 .wrapper {
     max-width: 75rem;
     margin: 2rem auto;
-    background-color: red;
     padding: 0 1rem;
 
     display: flex;

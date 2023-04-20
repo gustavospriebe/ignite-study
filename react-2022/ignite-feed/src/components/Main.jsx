@@ -1,10 +1,10 @@
-import styles from './Main.module.css';
+import styles from "./Main.module.css";
+import Post from "./Post";
 
 export default function Main() {
-  return (
-  <main className={styles.main}>
-        <h1>oi</h1>
-        <h1>oi</h1>
-    </main>
-  )
+    return (
+        <main className={styles.main}>
+            <Post />
+        </main>
+    );
 }

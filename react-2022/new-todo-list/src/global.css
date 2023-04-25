@@ -14,12 +14,9 @@
     --blue: #4ea8de;
     --blue-dark: #1e6f9f;
 
-    --danger: #e25858;
-}
+    --blue-dark-opacity: #1e709f1e;
 
-:focus {
-    outline: transparent;
-    box-shadow: 0 0 0 1px var(--purple-dark);
+    --danger: #e25858;
 }
 
 * {
@@ -42,6 +39,8 @@ textarea {
     font-weight: 400;
     font-size: 1rem;
     line-height: 1.4;
+
+    transition: all 0.2s;
 }
 
 @media (max-width: 768px) {
@@ -49,4 +48,3 @@ textarea {
         font-size: 87.5%;
     }
 }
-

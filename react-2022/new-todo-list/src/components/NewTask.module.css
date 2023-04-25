@@ -24,6 +24,8 @@
 
 .newTask > form > input:focus {
     color: var(--gray-100);
+    box-shadow: 0 0 0 1px var(--purple-dark);
+    outline: transparent;
 }
 
 .newTask > form > button {

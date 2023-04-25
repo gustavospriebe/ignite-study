@@ -1,0 +1,36 @@
+.taskListStatus {
+    margin-bottom: 1.5rem;
+    font-size: 0.875rem;
+    font-weight: bold;
+    color: var(--blue);
+    display: flex;
+    justify-content: space-between;
+}
+
+.taskListStatus > * {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.taskListStatus span {
+    color: var(--gray-200);
+    background-color: var(--gray-400);
+    padding: 0.125rem 0.5rem;
+    font-size: 0.75rem;
+    border-radius: 9999px;
+}
+
+.taskDoneStatus {
+    color: var(--purple);
+}
+
+.taskListEmpty {
+    border-top: 1px solid var(--gray-400);
+    padding: 4rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}

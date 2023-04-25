@@ -3,3 +3,9 @@
     height: 400px;
     margin: -27px auto 0 auto;
 }
+
+@media (max-width: 578px) {
+    .tasksDashboard {
+        width: 70%;
+    }
+}

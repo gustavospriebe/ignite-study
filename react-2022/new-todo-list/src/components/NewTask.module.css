@@ -1,0 +1,46 @@
+.newTask {
+    height: 3.375rem;
+    margin-bottom: 4rem;
+}
+
+.newTask > form {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100%;
+    gap: 0.75rem;
+}
+
+.newTask > form > input {
+    flex: 1;
+    /* width: 80%; */
+    background: var(--gray-500);
+    border-radius: 8px;
+    border: none;
+    color: var(--gray-300);
+    padding: 1rem;
+}
+
+.newTask > form > input:focus {
+    color: var(--gray-100);
+}
+
+.newTask > form > button {
+    width: 90px;
+    background: var(--blue-dark);
+    color: var(--gray-100);
+    border-radius: 8px;
+    border: none;
+    font-weight: bold;
+    
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    justify-content: center;
+}
+
+.newTask > form > button:hover {
+    background: var(--blue);
+    cursor: pointer;
+}

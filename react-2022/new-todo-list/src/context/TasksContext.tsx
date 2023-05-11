@@ -16,29 +16,6 @@ interface Props {
     children: React.ReactNode;
 }
 
-// {
-//     tasks: [],
-//     createTasks: () => null,
-//     completeTasks: () => null,
-// }
-
-// const DEFAULT_VALUE = {
-//     tasks: [
-//         {
-//             title: "Teste desdhjisji",
-//             completed: true,
-//         },
-//         {
-//             title: "Lorem ipsum dolor sit amet asdifjasdijfdiosa oasdfjasd ojfoasd",
-//             completed: true,
-//         },
-//         {
-//             title: "Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.",
-//             completed: false,
-//         },
-//     ],
-// };
-
 const TasksContext = createContext<TasksContextType>({ tasks: [] });
 
 const TasksProvider: React.FC<Props> = ({ children }) => {
